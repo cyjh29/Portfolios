@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="zoom">
+        <img src="img/mountain1.png" id="layer1">
+        <img src="img/mountain2.png" id="layer2">
+        <img src="img/text.png" id="text">
+    </section>
+    <section class="content">
+        <h2>Simple Background Parallax Using JavaScript</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique sagittis dignissim. Fusce porttitor scelerisque pulvinar. Aliquam erat volutpat. Cras ac accumsan purus, vitae accumsan ligula. Duis eget nibh eu erat suscipit vulputate. Nulla et tellus non augue condimentum tincidunt. Vivamus vitae risus consectetur, tincidunt magna ut, volutpat mi. Integer eget sodales diam. Integer diam orci, egestas at interdum dignissim, tristique sed leo. Vivamus erat ante, ultricies vitae cursus in, rhoncus et dolor.
+
+            Mauris faucibus ut mauris consequat aliquam. Ut eros mauris, tincidunt non vestibulum et, ornare in lectus. Praesent eleifend nisi tellus, a aliquam turpis rhoncus in. Aliquam tristique dictum massa, rutrum finibus mi aliquam tincidunt. Nulla consectetur lacus non tincidunt scelerisque. Cras at libero felis. Sed et bibendum est. Nunc luctus gravida turpis vitae ornare. Maecenas laoreet mi nec ipsum egestas suscipit. Curabitur consectetur ex non risus porttitor, consectetur vehicula lacus tempus. Proin dictum, massa efficitur venenatis pharetra, magna enim posuere justo, a lobortis ante purus auctor lectus. Suspendisse euismod nisi nec neque maximus ullamcorper. Donec cursus mi vitae dapibus pharetra. In vel dictum dolor. Proin sit amet porta nisi. Nunc eu augue scelerisque, tincidunt arcu sit amet, rhoncus mauris.
+            
+            Nulla non convallis mauris. Mauris posuere mauris urna, ut posuere orci ornare vel. Donec quam massa, ultricies vitae fringilla at, aliquet eget lorem. Nam vestibulum sit amet tellus quis tempus. Integer pulvinar efficitur est. Nunc pretium turpis id lobortis feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut ac dictum diam, ultricies porta ipsum. Sed ut vestibulum quam, non gravida ante. Praesent et rutrum velit. Duis nec varius est, non rhoncus dui. Donec vitae mi ac tortor bibendum fermentum at non mauris. Proin eget posuere metus. Suspendisse vel vehicula sapien, sed consequat tellus.
+            
+            Mauris in diam eu nisi lobortis vulputate. Morbi eget tempor tellus. Proin ut odio vestibulum tellus placerat consectetur in euismod odio. Ut tempus nunc ac feugiat venenatis. Vivamus magna nisl, efficitur vitae turpis quis, ultricies commodo ex. Mauris vel risus tortor. Suspendisse non nibh dolor. Sed id lorem nec dolor pellentesque ultrices. Duis dapibus quis justo a gravida. Mauris non tortor posuere, elementum tortor at, porta neque. Vestibulum vehicula a arcu at tempus. Praesent et pharetra nunc. Sed fermentum finibus molestie.
+            
+            Curabitur tempus lacinia justo, sit amet luctus elit. Aliquam mauris odio, vulputate eget fermentum et, posuere venenatis lectus. Vivamus placerat elit urna, et tempus purus facilisis at. Duis velit sem, bibendum in urna non, consequat faucibus purus. Vestibulum tempus tristique elit sed ultrices. Praesent gravida quam sed justo maximus hendrerit. Vivamus ipsum sapien, iaculis eu neque eu, tempor bibendum leo. Nullam cursus fringilla risus, congue semper nisi posuere ut. Nunc sit amet ante id quam luctus volutpat quis vitae risus. Cras nec justo id metus sagittis mollis ac nec leo.</p>
+    </section>
+    <script>
+        var layer1 = document.getElementById('layer1')
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e){
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer1.style.width = (100 + scroll/5) + '%';
+        });
+
+        var layer2 = document.getElementById('layer2')
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e){
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll/5) + '%';
+            layer2.style.left = scroll/50 + '%';
+        });
+
+        var text = document.getElementById('text')
+        scroll = window.pageYOffset;
+        document.addEventListener('scroll', function (e){
+            var offset = window.pageYOffset;
+            scroll = offset;
+            layer2.style.width = (100 + scroll/5) + '%';
+            text.style.top = - scroll/20 + '%';
+        });
+    </script>
+</body>
+</html>
